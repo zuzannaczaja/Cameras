@@ -16,7 +16,7 @@ namespace Cameras.Services
             };
 
             var workingDirectory = Environment.CurrentDirectory;
-            var projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.Parent.FullName;
+            var projectDirectory = Directory.GetParent(workingDirectory).FullName;
 
             using (var streamReader = File.OpenText(projectDirectory + "\\Cameras.API\\cameras-defb.csv"))
             using (var csv = new CsvReader(streamReader, csvConfig))
